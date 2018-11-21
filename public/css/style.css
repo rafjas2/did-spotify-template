@@ -11,23 +11,25 @@ h1 {
 #login span i {
     color:  #4CA90B;
     font-size: 150px;
-    text-align: center;
-    display: block;
-    margin-top: 5%; 
+    display: block; 
+    position: absolute;
+    top: 25%; left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 #login h1 {
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%,-50%);
     font-size: 60px;
     color: #fff;
-    text-align: center;
-    margin: 5% 0 0;
 }
 
 /*====================3D BOTTON LOG IN=================*/
 
 #login-button {
     position: absolute;
-    top: 55%; left: 50%;
+    top: 60%; left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     height: 50px;
