@@ -1,3 +1,10 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 
 body {
     margin: 0;
@@ -5,24 +12,36 @@ body {
     background-color: #4D0FE7  
 }
 
-h1 {
+h1, h2 {
     font-family: 'Hammersmith One', cursive;
+    color: #fff;
+    font-size: 60px;   
 }
-#login span i {
+h1 {
+    position: absolute;
+    top: 22%; left: 50%;
+    transform: translate(-50%,-50%);  
+}
+
+h2 {
+    width: 20%;
+    text-align: center;
+}
+
+
+#logo span > i {
     color:  #4CA90B;
-    font-size: 150px;
+    font-size: 120px;
     display: block; 
     position: absolute;
-    top: 25%; left: 50%;
+    top: 15%; left: 50%;
     transform: translate(-50%,-50%);
 }
 
-#login h1 {
+#login h1, h2 {
     position: absolute;
     top: 40%; left: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 60px;
-    color: #fff;
+    transform: translate(-50%,-50%);  
 }
 
 /*====================3D BOTTON LOG IN=================*/
@@ -92,5 +111,79 @@ h1 {
     transform: rotateX(-180deg);
 }
 
-/*=============================================*/
+/*===================ARTISTS==========================*/
 
+#artist-one, #artist-two {
+    background: #4D0FE7;
+    width: 20%;
+    height: 35%;
+    /*border: 2px solid red;*/
+    display: inline-block;
+}
+
+#artist-one {
+    position: absolute;
+    top: 35%; left: 0;  
+    margin-left: 20%; 
+}
+
+#artist-two {
+    position: absolute;
+    top: 35%; right: 0;
+    margin-right: 20%;
+}
+
+#artist-one img, #artist-two img  {
+    width: 210px;
+    height: 200px;
+    display: block;
+    position: relative;
+    margin: auto;
+    border-radius:50%;
+}
+.search-box {
+    position: absolute;
+    bottom: 0%; left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to top, #2F6C06, #63F003);
+    line-height: 45px;
+    border-radius: 30px;  
+    cursor: pointer;  
+}
+
+.search-btn {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    font-size: 22px;
+    background: linear-gradient(to top, #2F6C06, #63F003);
+    border-radius: 50%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-box:hover > .search-btn {
+    color: #4CA90B;
+    background: #fff;
+    border: 3px solid #4CA90B; 
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #000;
+    line-height: 45px;
+    font-size: 16px;
+    transition: 0.4s;
+    width: 0;
+}
+.search-box:hover > .search-txt {
+    width: 70%;
+    padding: 0 10px;
+}

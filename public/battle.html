@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Spotify Artist Battle Template</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
@@ -11,5 +11,24 @@
   <body>
     <div class="container">
     <!--<div id="user-profile"></div>-->
+      <div id="logo">
+        <span><i class="fab fa-spotify"></i></span>
+      </div>
+      <h1>Lets Battle</h1>
+        <div id="artist-one">
+          <img src="img/spartan-one.png">
+          <div class="search-box">
+            <input class="search-txt" type="text" placeholder="Type to serch">
+            <span class="search-btn"><i class="fas fa-search"></i></span>
+          </div>
+        </div>
+            <h2>VS</h2>
+        <div id="artist-two">
+          <img src="img/spartan-two.png">
+          <div class="search-box">
+              <input class="search-txt" type="text" placeholder="Type to serch">
+              <span class="search-btn"><i class="fas fa-search"></i></span>
+            </div>
+        </div>
     <script type="module" src="/js/pages/battle.js"></script>
 </html>
