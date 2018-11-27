@@ -1,3 +1,194 @@
+<<<<<<< HEAD
 body {
     background-color: brown;
+=======
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #4D0FE7  
+}
+
+h1, h2 {
+    font-family: 'Hammersmith One', cursive;
+    color: #fff;
+    font-size: 60px;   
+}
+h1 {
+    position: absolute;
+    top: 22%; left: 50%;
+    transform: translate(-50%,-50%);  
+}
+
+h2 {
+    width: 20%;
+    text-align: center;
+}
+
+
+#logo span > i {
+    color:  #4CA90B;
+    font-size: 120px;
+    display: block; 
+    position: absolute;
+    top: 15%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#login h1, h2 {
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%,-50%);  
+}
+
+/*====================3D BOTTON LOG IN=================*/
+
+#login-button {
+    position: absolute;
+    top: 60%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+#login-button span {
+    position: absolute;
+    top:0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-family: 'Roboto', serif;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 30px;
+    color: #fff;
+    transition: 1s;
+    
+}
+#login-button span.front {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+#login-button:hover span.front {
+    transform: rotateX(-180deg) translateZ(20px);
+}
+
+#login-button span.back {
+    transform: rotateX(180deg) translateZ(20px);
+}
+
+#login-button:hover span.back {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+#login-button span.center {
+    background: linear-gradient(to top, #2F6C06, #63F003);
+}
+#login-button span.center:before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #63F003, #2F6C06);
+    border-radius: 30px;
+    transform: translateZ(-1px);
+}
+
+#login-button:hover span.center {
+    transform: rotateX(-180deg);
+}
+
+/*===================ARTISTS==========================*/
+
+#artist-one, #artist-two {
+    background: #4D0FE7;
+    width: 20%;
+    height: 35%;
+    /*border: 2px solid red;*/
+    display: inline-block;
+}
+
+#artist-one {
+    position: absolute;
+    top: 35%; left: 0;  
+    margin-left: 20%; 
+}
+
+#artist-two {
+    position: absolute;
+    top: 35%; right: 0;
+    margin-right: 20%;
+}
+
+#artist-one img, #artist-two img  {
+    width: 210px;
+    height: 200px;
+    display: block;
+    position: relative;
+    margin: auto;
+    border-radius:50%;
+}
+.search-box {
+    position: absolute;
+    bottom: 0%; left: 50%;
+    transform: translate(-50%,-50%);
+    background: linear-gradient(to top, #2F6C06, #63F003);
+    line-height: 45px;
+    border-radius: 30px;  
+    cursor: pointer;  
+}
+
+.search-btn {
+    width: 45px;
+    height: 45px;
+    color: #fff;
+    font-size: 22px;
+    background: linear-gradient(to top, #2F6C06, #63F003);
+    border-radius: 50%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-box:hover > .search-btn {
+    color: #4CA90B;
+    background: #fff;
+    border: 3px solid #4CA90B; 
+}
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #000;
+    line-height: 45px;
+    font-size: 16px;
+    transition: 0.4s;
+    width: 0;
+}
+.search-box:hover > .search-txt {
+    width: 70%;
+    padding: 0 10px;
+>>>>>>> dacb65b47315125f2564161deb124197e8761d8e
 }

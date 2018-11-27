@@ -7,7 +7,7 @@ const {access_token, state} = getHashParams();
 const storedState = localStorage.getItem(STATE_KEY);
 
 
-const outputTemplate = ({display_name, id, email, uri, external_urls, images, country}) =>`<h1>Logged in as </h1>
+/*const outputTemplate = ({display_name, id, email, uri, external_urls, images, country}) =>`<h1>Logged in as </h1>
   <div class="media">
     <div class="pull-left">
       <img class="media-object" width="150" src="">
@@ -23,7 +23,7 @@ const outputTemplate = ({display_name, id, email, uri, external_urls, images, co
         <dt>Country</dt><dd>${country}</dd>
       </dl>
     </div>
-  </div>`
+  </div>`*/
 
 
 if (!access_token || (state == null || state !== storedState)) {

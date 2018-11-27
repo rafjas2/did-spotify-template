@@ -4,7 +4,11 @@
   "description": "Battle Artsits to see who is the best!",
   "scripts": {
     "start": "node app.js"
+<<<<<<< HEAD
   },
+=======
+    },
+>>>>>>> dacb65b47315125f2564161deb124197e8761d8e
   "version": "0.0.1",
   "dependencies": {
     "express": "~4.16.0"
