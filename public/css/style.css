@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-body {
-    background-color: brown;
-=======
 html {
 	box-sizing: border-box;
 }
@@ -18,13 +14,8 @@ body {
 
 h1, h2 {
     font-family: 'Hammersmith One', cursive;
-    color: #fff;
-    font-size: 60px;   
-}
-h1 {
-    position: absolute;
-    top: 22%; left: 50%;
-    transform: translate(-50%,-50%);  
+    color: #fff; 
+    font-size: 70px;  
 }
 
 h2 {
@@ -35,7 +26,7 @@ h2 {
 
 #logo span > i {
     color:  #4CA90B;
-    font-size: 120px;
+    font-size: 150px;
     display: block; 
     position: absolute;
     top: 15%; left: 50%;
@@ -50,9 +41,9 @@ h2 {
 
 /*====================3D BOTTON LOG IN=================*/
 
-#login-button {
+#login-button, #battle-button {
     position: absolute;
-    top: 60%; left: 50%;
+    top: 80%; left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     height: 50px;
@@ -63,7 +54,7 @@ h2 {
     perspective: 1000px;
 }
 
-#login-button span {
+#login-button span, #battle-button span {
     position: absolute;
     top:0; left: 0;
     width: 100%;
@@ -81,26 +72,26 @@ h2 {
     transition: 1s;
     
 }
-#login-button span.front {
+#login-button span.front, #battle-button span.front {
     transform: rotateX(0deg) translateZ(20px);
 }
 
-#login-button:hover span.front {
+#login-button:hover span.front, #battle-button:hover span.front {
     transform: rotateX(-180deg) translateZ(20px);
 }
 
-#login-button span.back {
+#login-button span.back, #battle-button span.back {
     transform: rotateX(180deg) translateZ(20px);
 }
 
-#login-button:hover span.back {
+#login-button:hover span.back, #battle-button:hover span.back {
     transform: rotateX(0deg) translateZ(20px);
 }
 
-#login-button span.center {
+#login-button span.center, #battle-button span.center {
     background: linear-gradient(to top, #2F6C06, #63F003);
 }
-#login-button span.center:before {
+#login-button span.center:before, #battle-button span.center:before {
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -111,7 +102,7 @@ h2 {
     transform: translateZ(-1px);
 }
 
-#login-button:hover span.center {
+#login-button:hover span.center, #battle-button:hover span.center {
     transform: rotateX(-180deg);
 }
 
@@ -119,40 +110,41 @@ h2 {
 
 #artist-one, #artist-two {
     background: #4D0FE7;
-    width: 20%;
-    height: 35%;
+    width: 30%;
+    height: 40%;
     /*border: 2px solid red;*/
     display: inline-block;
+    position: absolute;
 }
 
 #artist-one {
-    position: absolute;
     top: 35%; left: 0;  
-    margin-left: 20%; 
+    margin-left: 10%; 
 }
 
 #artist-two {
-    position: absolute;
     top: 35%; right: 0;
-    margin-right: 20%;
+    margin-right: 10%;
 }
 
 #artist-one img, #artist-two img  {
-    width: 210px;
-    height: 200px;
+    width: 55%;
     display: block;
-    position: relative;
-    margin: auto;
+    position: absolute;
+    top: 0%; left: 50%;
+    transform: translate(-50%,0);
     border-radius:50%;
+    /*border: 2px solid red;*/
 }
 .search-box {
     position: absolute;
     bottom: 0%; left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,0%);
     background: linear-gradient(to top, #2F6C06, #63F003);
     line-height: 45px;
     border-radius: 30px;  
     cursor: pointer;  
+
 }
 
 .search-btn {
@@ -188,7 +180,6 @@ h2 {
     width: 0;
 }
 .search-box:hover > .search-txt {
-    width: 70%;
-    padding: 0 10px;
->>>>>>> dacb65b47315125f2564161deb124197e8761d8e
+    width: 73%;
+    padding: 0 5%;
 }
