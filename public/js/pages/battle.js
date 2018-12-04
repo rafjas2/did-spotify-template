@@ -7,7 +7,7 @@ const {access_token, state} = getHashParams();
 const storedState = localStorage.getItem(STATE_KEY);
 
 
-/*const outputTemplate = ({display_name, id, email, uri, external_urls, images, country}) =>`<h1>Logged in as </h1>
+const outputTemplate = ({display_name, id, email, uri, external_urls, images, country}) =>`<h1>Logged in as </h1>
   <div class="media">
     <div class="pull-left">
       <img class="media-object" width="150" src="">
@@ -23,7 +23,7 @@ const storedState = localStorage.getItem(STATE_KEY);
         <dt>Country</dt><dd>${country}</dd>
       </dl>
     </div>
-  </div>`*/
+  </div>`
 
 
 if (!access_token || (state == null || state !== storedState)) {
@@ -33,3 +33,62 @@ if (!access_token || (state == null || state !== storedState)) {
     USER_PROFILE.innerHTML = outputTemplate(data);
   });
 }
+
+const ARTIST_PROFILE = document.getElementById('search-btn-one');
+
+ARTIST_PROFILE.addEventListener('click', () => {
+  const artistOne = document.getElementById('search-txt-one').value;
+  alert(artistOne);
+  });
+
+const artistTemplate = ({display_name, id, images}) =>`<h1>Logged in as </h1>
+<div class="media">
+  <div class="pull-left">
+    <img class="media-object" width="150" src="">
+  </div>
+  <div class="media-body">
+    <dl class="dl-horizontal">
+      <dt>Display name</dt><dd class="clearfix">${display_name}</dd>
+      <dt>Id</dt><dd>${id}</dd>
+      <dt>Spotify URI</dt><dd><a href="${uri}">${uri}</a></dd>
+    </dl>
+  </div>
+</div>`
+
+
+
+if (!access_token || (state == null || state !== storedState)) {
+  window.location = "/";
+} else {
+  SpotifyAPI.getArtistsData(access_token).then(data => {
+    ARTIST_PROFILE.innerHTML = artistTemplate(data);
+  });
+}
+
+
+
+
+
+ 
+getArtistOne.addEventListener('click', () => {
+                        const artistOne = document.getElementById('search-txt-one').value;
+                        alert(artistOne);
+                        });
+
+const getArtistTwo = document.getElementById('search-btn-two');
+ 
+getArtistTwo.addEventListener('click', () => {
+                        const artistTwo = document.getElementById('search-txt-two').value;
+                        alert(artistTwo);
+                        });
+
+
+// function getArtist() {
+//   fetch('https://api.spotify.com/v1/search')
+//   .then((res) => res.json())
+//   .then((data) => {
+//     let output = '<h3>Artists</h3>';
+//     console.log(data);
+//   })
+// }
+

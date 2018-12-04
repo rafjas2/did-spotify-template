@@ -146,7 +146,7 @@ h2 {
 }
 
 
-.search-box-one, .search-box-two {
+#search-box-one, #search-box-two {
     width: 250px;
     position: absolute;
     bottom: 0%; left: 50%;
@@ -157,12 +157,13 @@ h2 {
     cursor: pointer;  
 }
 
-.search-btn-one, .search-btn-two {
+#search-btn-one, #search-btn-two {
     width: 45px;
     height: 45px;
     color: #fff;
     font-size: 22px;
     background: linear-gradient(to top, #2F6C06, #63F003);
+    border: 3px solid #4CA90B;
     border-radius: 50%;
     float: right;
     display: flex;
@@ -171,13 +172,18 @@ h2 {
     transition: 0.4s;
 }
 
-.search-box-one:hover > .search-btn-one, .search-box-two:hover > .search-btn-two {
+#search-box-one:hover > #search-btn-one, #search-box-two:hover > #search-btn-two {
     color: #4CA90B;
     background: #fff;
     border: 3px solid #4CA90B;
 }
 
-.search-txt-one, .search-txt-two {
+#search-box-one > #search-btn-one:active, #search-box-two > #search-btn-two:active {
+    color: #fff;
+    background: #4D0FE7;
+}
+
+#search-txt-one, #search-txt-two {
     border: none;
     background: none;
     outline: none;
@@ -185,6 +191,10 @@ h2 {
     line-height: 30px;
     font-size: 16px;
     color: #000;
-    width: 180px;
-    margin: 5px 0 5px 15px;
+    width: 190px;
+    padding-left: 10px;
+    margin: 5px 0 5px 5px;
+    border: 3px solid #4CA90B;
+    border-radius: 30px;
 }
+
