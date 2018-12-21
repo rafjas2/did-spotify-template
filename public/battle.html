@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <title>Spotify Artist Battle Template</title>
     <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../css/style.css">
@@ -10,29 +11,33 @@
   </head>
   <body>
     <div class="container">
-    <!--<div id="user-profile"></div>-->
+    <div id="user-profile"></div>
       <div id="logo">
         <span><i class="fab fa-spotify"></i></span>
       </div>
         <div id="artist-one">
-          <img src="../img/spartan-one.png">
-          <div class="search-box">
-            <input class="search-txt" type="text" placeholder="Type to serch">
-            <span class="search-btn"><i class="fas fa-search"></i></span>
-          </div>
+          <img src="../img/spartan-one.png" alt="Spartan helm">
+          <p class="artist-name"></p>
+            <form id="search-box-one">
+              <input id="search-txt-one" type="text" value="" placeholder="Type The Artist">
+              <span id="search-btn-one"><i class="fas fa-search"></i></span>
+            </form>
         </div>
         <h2>VS</h2>
         <div id="artist-two">
-          <img src="../img/spartan-two.png">
-          <div class="search-box">
-              <input class="search-txt" type="text" placeholder="Type to serch">
-              <span class="search-btn"><i class="fas fa-search"></i></span>
-            </div>
+          <img src="../img/spartan-two.png" alt="Spartan helm">
+          <p class="artist-name"></p>
+            <form id="search-box-two">
+              <input id="search-txt-two" type="text" value="" placeholder="Type The Artist">
+              <span id="search-btn-two"><i class="fas fa-search"></i></span>
+            </form>
         </div>
         <div id="battle-button">
           <span class="front">LETS BATTLE</span>
           <span class="center"></span>
           <span class="back">CLICK HERE</span>
         </div>
+        </div>
     <script type="module" src="/js/pages/battle.js"></script>
-</html>
+    </body>
+    </html>

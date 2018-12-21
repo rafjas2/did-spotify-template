@@ -9,18 +9,21 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #4D0FE7  
+    background-color: #4D0FE7;  
+    font-family: 'Hammersmith One', cursive; 
+    color: #fff;
 }
 
-h1, h2 {
-    font-family: 'Hammersmith One', cursive;
-    color: #fff; 
-    font-size: 70px;  
+h1 { 
+    width: 100%;
+    font-size: 70px;
+    text-align: center;  
 }
 
 h2 {
     width: 20%;
-    text-align: center;
+    font-size: 80px;
+    text-align: center; 
 }
 
 
@@ -43,7 +46,6 @@ h2 {
 
 #login-button, #battle-button {
     position: absolute;
-    top: 80%; left: 50%;
     transform: translate(-50%, -50%);
     width: 300px;
     height: 50px;
@@ -53,6 +55,15 @@ h2 {
     transform-style: preserve-3d;
     perspective: 1000px;
 }
+
+#login-button {
+    top: 65%; left: 50%;
+}
+
+#battle-button {
+    top: 80%; left: 50%;
+}
+
 
 #login-button span, #battle-button span {
     position: absolute;
@@ -111,48 +122,48 @@ h2 {
 #artist-one, #artist-two {
     background: #4D0FE7;
     width: 30%;
-    height: 40%;
-    /*border: 2px solid red;*/
-    display: inline-block;
+    height: 350px;
     position: absolute;
 }
 
 #artist-one {
-    top: 35%; left: 0;  
-    margin-left: 10%; 
+    top: 35%; left: 10%; 
+    
 }
 
 #artist-two {
-    top: 35%; right: 0;
-    margin-right: 10%;
+    top: 35%; right: 10%;
+
 }
 
 #artist-one img, #artist-two img  {
-    width: 55%;
+    width: 240px;
     display: block;
     position: absolute;
     top: 0%; left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%,0%);
     border-radius:50%;
-    /*border: 2px solid red;*/
 }
-.search-box {
+
+
+#search-box-one, #search-box-two {
+    width: 250px;
     position: absolute;
     bottom: 0%; left: 50%;
     transform: translate(-50%,0%);
     background: linear-gradient(to top, #2F6C06, #63F003);
-    line-height: 45px;
-    border-radius: 30px;  
+    border-radius: 30px;
+    line-height: 45px; 
     cursor: pointer;  
-
 }
 
-.search-btn {
+#search-btn-one, #search-btn-two {
     width: 45px;
     height: 45px;
     color: #fff;
     font-size: 22px;
     background: linear-gradient(to top, #2F6C06, #63F003);
+    border: 3px solid #4CA90B;
     border-radius: 50%;
     float: right;
     display: flex;
@@ -161,26 +172,28 @@ h2 {
     transition: 0.4s;
 }
 
-.search-box:hover > .search-btn {
+#search-box-one:hover > #search-btn-one, #search-box-two:hover > #search-btn-two {
     color: #4CA90B;
     background: #fff;
-    border: 3px solid #4CA90B; 
+    border: 3px solid #4CA90B;
 }
 
-.search-txt {
+#search-box-one > #search-btn-one:active, #search-box-two > #search-btn-two:active {
+    color: #fff;
+    background: #4D0FE7;
+}
+
+#search-txt-one, #search-txt-two {
     border: none;
     background: none;
     outline: none;
     float: left;
-    padding: 0;
-    color: #000;
-    line-height: 45px;
+    line-height: 30px;
     font-size: 16px;
-    transition: 0.4s;
-    width: 0;
-}
-.search-box:hover > .search-txt {
-    width: 73%;
-    padding: 0 5%;
-    
+    color: #000;
+    width: 190px;
+    padding-left: 10px;
+    margin: 5px 0 5px 5px;
+    border: 3px solid #4CA90B;
+    border-radius: 30px;
 }

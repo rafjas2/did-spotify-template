@@ -6,30 +6,46 @@ const USER_PROFILE = document.getElementById('user-profile');
 const {access_token, state} = getHashParams();
 const storedState = localStorage.getItem(STATE_KEY);
 
-
-/*const outputTemplate = ({display_name, id, email, uri, external_urls, images, country}) =>`<h1>Logged in as </h1>
-  <div class="media">
-    <div class="pull-left">
-      <img class="media-object" width="150" src="">
-    </div>
-    <div class="media-body">
-      <dl class="dl-horizontal">
-        <dt>Display name</dt><dd class="clearfix">${display_name}</dd>
-        <dt>Id</dt><dd>${id}</dd>
-        <dt>Email</dt><dd>${email}</dd>
-        <dt>Spotify URI</dt><dd><a href="${uri}">${uri}</a></dd>
-        <dt>Link</dt><dd><a href="${external_urls.spotify}">${external_urls.spotify}</a></dd>
-        <dt>Profile Image</dt><dd class="clearfix"><a href=""></a></dd>
-        <dt>Country</dt><dd>${country}</dd>
-      </dl>
-    </div>
-  </div>`*/
-
+var artist1 = null;
+var artist2 = null;
 
 if (!access_token || (state == null || state !== storedState)) {
   window.location = "/";
-} else {
-  SpotifyAPI.getUserData(access_token).then(data => {
-    USER_PROFILE.innerHTML = outputTemplate(data);
-  });
 }
+
+
+const getArtistOne = document.getElementById('search-btn-one');
+
+getArtistOne.addEventListener('click', async () => {
+  const artistOne = document.getElementById('search-txt-one').value;
+  artist1 = await SpotifyAPI.getArtist(access_token, artistOne);
+  const artistImage = document.querySelector("#artist-one img");
+  artistImage.src = artist1.images[0].url;
+  const artistName = document.querySelector("#artist-one .artist-name");
+  artistName.innerHTML = artist1.name; 
+});
+
+const getArtistTwo = document.getElementById('search-btn-two');
+ 
+getArtistTwo.addEventListener('click', async () => {
+  const artistTwo = document.getElementById('search-txt-two').value;
+  artist2 = await SpotifyAPI.getArtist(access_token, artistTwo);
+  const artistImage = document.querySelector("#artist-two img");
+  artistImage.src = artist2.images[0].url;
+  const artistName = document.querySelector("#artist-two .artist-name");
+  artistName.innerHTML = artist2.name;
+});
+
+const getBattle = document.getElementById('battle-button');
+
+getBattle.addEventListener('click', () => {
+  if(artist1 === null && artist2 === null) {
+    alert( "Please fill two artists");
+  }
+  if(artist1.followers.total > artist2.followers.total ? artist1 : artist2) {
+    return artist1.followers.total > artist2.followers.total;
+  }
+});
+
+
+
