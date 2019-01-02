@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>Spotify Artist Battle Template</title>
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
   <body>
-    <div class="container">
-    <div id="user-profile"></div>
-      <div id="logo">
-        <span><i class="fab fa-spotify"></i></span>
-      </div>
+    <div id="logo">
+      <span><i class="fab fa-spotify"></i></span>
+    </div>
+    <div id="container-two">
+      <!--============= ArtistOne Search Input =======================-->
         <div id="artist-one">
-          <img src="../img/spartan-one.png" alt="Spartan helm">
+          <img src="../img/spartan-one.png" alt="Artist Image">
           <p class="artist-name"></p>
             <form id="search-box-one">
               <input id="search-txt-one" type="text" value="" placeholder="Type The Artist">
@@ -24,19 +24,34 @@
             </form>
         </div>
         <h2>VS</h2>
+       <!--============= ArtistTwo Search Input =======================--> 
         <div id="artist-two">
-          <img src="../img/spartan-two.png" alt="Spartan helm">
+          <img src="../img/spartan-two.png" alt="Artist Image">
           <p class="artist-name"></p>
             <form id="search-box-two">
               <input id="search-txt-two" type="text" value="" placeholder="Type The Artist">
               <span id="search-btn-two"><i class="fas fa-search"></i></span>
             </form>
         </div>
+       <!--============= Buttle 3D Button =======================--> 
         <div id="battle-button">
           <span class="front">LETS BATTLE</span>
           <span class="center"></span>
           <span class="back">CLICK HERE</span>
         </div>
+        </div>
+       <!--============= The Winner =======================--> 
+        <div id="winner">
+          <h1 id="theWinner">The Winner</h1>
+          <img src="#" alt="Artist Image">
+          <p class="artist-name"></p>
+          <p class="fallowers"></p>
+        <!--============= Back 3D Button =======================-->  
+            <div id="back-button">
+              <span class="front">BACK</span>
+              <span class="center"></span>
+              <span class="back">TO BATTLE</span>
+            </div>
         </div>
     <script type="module" src="/js/pages/battle.js"></script>
     </body>
