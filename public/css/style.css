@@ -66,12 +66,12 @@ h2 {
 }
 
 #battle-button {
-    top: 85%; left: 50%;
+    top: 83%; left: 50%;
 }
 
 #back-button {
     display: none;
-    top: 85%; left: 50%;
+    top: 83%; left: 50%;
 }
 
 
@@ -255,4 +255,17 @@ h2 {
     font-size: 12px;
     border: 1px solid #fff;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  @media all and (min-height: 900px) {
+
+    #battle-button {
+        top: 70%; left: 50%;
+    }
+    
+    #back-button {
+        display: none;
+        top: 70%; left: 50%;
+    }
+
   }
