@@ -52,6 +52,7 @@ getArtistTwo.addEventListener('click', async () => {
  const winnerName = document.querySelector('#winner .artist-name');
  const winnerImage = document.querySelector("#winner img");
  const winnerFallowers = document.querySelector('#winner .fallowers');
+ const logo = document.getElementById('logo');
  
  getBattle.addEventListener('click', () => {
   if(artist1 === null || artist2 === null) {
@@ -71,6 +72,8 @@ getArtistTwo.addEventListener('click', async () => {
   }
  
   container.style.display = "none";
+  backToBattle.style.display = "block";
+  logo.style.display = "none";
   winner.style.display = "block";
   artistImageOne.src = "../img/spartan-one.png"; 
   artistImageTwo.src = "../img/spartan-two.png";
@@ -85,7 +88,9 @@ getArtistTwo.addEventListener('click', async () => {
 const backToBattle = document.getElementById('back-button');
 
 backToBattle.addEventListener('click', () => {
+  backToBattle.style.display = "none";
   container.style.display = "block";
+  logo.style.display = "block";
   winner.style.display = "none";
   winnerImage.src = "";
   winnerName.innerHTML = "";
