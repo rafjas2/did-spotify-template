@@ -243,7 +243,7 @@ h2 {
     background-color: rgba(23, 14, 145, 0.45);
   }
   .swal-modal {
-    background: linear-gradient(to top, #2F6C06, #63F003);
+    background: linear-gradient(to top, rgb(73, 128, 36), rgb(170, 240, 123));
     border: 3px solid white;
   }
 
