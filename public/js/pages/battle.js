@@ -5,12 +5,12 @@ import {STATE_KEY} from "../helpers/constants.js";
 const {access_token, state} = getHashParams();
 const storedState = localStorage.getItem(STATE_KEY);
 
-var artist1 = null;
-var artist2 = null;
-
 if (!access_token || (state == null || state !== storedState)) {
   window.location = "/";
 }
+
+var artist1 = null;
+var artist2 = null;
 
 /*========================= Geting Data of First Artist =============================*/
 
@@ -26,6 +26,7 @@ getArtistOne.addEventListener('click', async () => {
   artistNameOne.innerHTML = artist1.name; 
   searchArtistOne.reset();
   searchArtistOne.style.display = "none";
+  console.log("Artist One is: " + artist1.name + "," + " Followers: " + artist1.followers.total);
 });
 
 /*========================= Geting Data of Secend Artist =============================*/
@@ -42,6 +43,7 @@ getArtistTwo.addEventListener('click', async () => {
   artistNameTwo.innerHTML = artist2.name;
   searchArtistTwo.reset();
   searchArtistTwo.style.display = "none";
+  console.log("Artist Two is: " + artist2.name + "," + " Followers: " + artist2.followers.total);
 });
 
 /*======================== Compering Artists ====================================*/
@@ -57,20 +59,22 @@ getArtistTwo.addEventListener('click', async () => {
  getBattle.addEventListener('click', () => {
   if(artist1 === null || artist2 === null) {
     swal({title: "Please Add The Artists"});
-    return getBattle;
+    return;
   }
 
   if(artist1.followers.total > artist2.followers.total) {
     winnerImage.src = artist1.images[0].url;
     winnerName.innerHTML = artist1.name;
-    winnerFallowers.innerHTML = artist1.followers.total; 
+    winnerFallowers.innerHTML = artist1.followers.total;
+    console.log("Winner is: " + artist1.name + "," + " Followers: " + artist1.followers.total); 
   }
   else {
     winnerImage.src = artist2.images[0].url;
     winnerName.innerHTML = artist2.name;
     winnerFallowers.innerHTML = artist2.followers.total; 
+    console.log("Winner is: " + artist2.name + "," + " Followers: " + artist2.followers.total);
   }
- 
+  
   container.style.display = "none";
   backToBattle.style.display = "block";
   logo.style.display = "none";
@@ -81,6 +85,7 @@ getArtistTwo.addEventListener('click', async () => {
   artistNameTwo.innerHTML = "";  
   artist1 = null;
   artist2 = null;
+  
 });
 
 /*=================== Back To The Buttle Again ======================*/
