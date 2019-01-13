@@ -23,6 +23,7 @@ getArtistOne.addEventListener('click', async () => {
   const artistOne = document.getElementById('search-txt-one').value;
   artist1 = await SpotifyAPI.getArtist(access_token, artistOne);
   artistImageOne.src = artist1.images[0].url;
+  artistImageOne.style.border = "3px solid #ffffff";
   artistNameOne.innerHTML = artist1.name; 
   searchArtistOne.reset();
   searchArtistOne.style.display = "none";
@@ -40,6 +41,7 @@ getArtistTwo.addEventListener('click', async () => {
   const artistTwo = document.getElementById('search-txt-two').value;
   artist2 = await SpotifyAPI.getArtist(access_token, artistTwo);
   artistImageTwo.src = artist2.images[0].url;
+  artistImageTwo.style.border = "3px solid #ffffff";
   artistNameTwo.innerHTML = artist2.name;
   searchArtistTwo.reset();
   searchArtistTwo.style.display = "none";
@@ -48,15 +50,15 @@ getArtistTwo.addEventListener('click', async () => {
 
 /*======================== Compering Artists ====================================*/
 
- const getBattle = document.getElementById('battle-button');
- const container = document.getElementById("container-two");
- const winner = document.getElementById("winner");
- const winnerName = document.querySelector('#winner .artist-name');
- const winnerImage = document.querySelector("#winner img");
- const winnerFallowers = document.querySelector('#winner .fallowers');
- const logo = document.getElementById('logo');
+const getBattle = document.getElementById('battle-button');
+const container = document.getElementById("container-two");
+const winner = document.getElementById("winner");
+const winnerName = document.querySelector('#winner .artist-name');
+const winnerImage = document.querySelector("#winner img");
+const winnerFallowers = document.querySelector('#winner .fallowers');
+const logo = document.getElementById('logo');
  
- getBattle.addEventListener('click', () => {
+getBattle.addEventListener('click', () => {
   if(artist1 === null || artist2 === null) {
     swal({title: "Please Add The Artists"});
     return;
@@ -74,13 +76,16 @@ getArtistTwo.addEventListener('click', async () => {
     winnerFallowers.innerHTML = artist2.followers.total; 
     console.log("Winner is: " + artist2.name + "," + " Followers: " + artist2.followers.total);
   }
-  
+
+  winnerImage.style.border = "3px solid #ffffff";
   container.style.display = "none";
   backToBattle.style.display = "block";
   logo.style.display = "none";
   winner.style.display = "block";
   artistImageOne.src = "../img/spartan-one.png"; 
+  artistImageOne.style.border = "none";
   artistImageTwo.src = "../img/spartan-two.png";
+  artistImageTwo.style.border = "none";
   artistNameOne.innerHTML = "";
   artistNameTwo.innerHTML = "";  
   artist1 = null;
