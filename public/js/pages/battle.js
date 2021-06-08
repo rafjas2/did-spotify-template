@@ -22,7 +22,7 @@ const searchArtistOne = document.getElementById('search-box-one');
 getArtistOne.addEventListener('click', async () => {
   const artistOne = document.getElementById('search-txt-one').value;
   artist1 = await SpotifyAPI.getArtist(access_token, artistOne);
-  artistImageOne.src = artist1.images.url;
+  artistImageOne.src = artist1.images[0].url;
   artistImageOne.style.border = "3px solid #ffffff";
   artistNameOne.innerHTML = artist1.name;
   searchArtistOne.reset();
@@ -40,7 +40,7 @@ const searchArtistTwo = document.getElementById('search-box-two');
 getArtistTwo.addEventListener('click', async () => {
   const artistTwo = document.getElementById('search-txt-two').value;
   artist2 = await SpotifyAPI.getArtist(access_token, artistTwo);
-  artistImageTwo.src = artist2.images.url;
+  artistImageTwo.src = artist2.images[0].url;
   artistImageTwo.style.border = "3px solid #ffffff";
   artistNameTwo.innerHTML = artist2.name;
   searchArtistTwo.reset();
